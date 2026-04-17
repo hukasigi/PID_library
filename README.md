@@ -23,6 +23,14 @@ double dt = CONTROL_CYCLE * 1e-6;
 にしてください。
 dtは[s]で与えてください
 
+## ライブラリの使い方
+libにcd して、git clone して、
+```
+#include "AnglePID.h"
+```
+のようにしたら動きます。
+
+
 ## RawPID
 基本的なPIDです。
 ```
