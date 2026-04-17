@@ -15,11 +15,11 @@ class Pid {
             this->output       = 0;
         }
         void setTarget(double target) { this->target = target; }
-        // dt[ms]
+        // dt[s]
         double update(double currentValue, double dt) {
             this->error = this->target - currentValue;
-            this->integral += this->error * dt / 1000;
-            this->derivative = (this->error - this->prevError) / dt * 1000;
+            this->integral += this->error * dt;
+            this->derivative = (this->error - this->prevError) / dt;
             this->output     = this->Kp * this->error + this->Ki * this->integral + this->Kd * this->derivative;
             this->prevError  = this->error;
             return output;
